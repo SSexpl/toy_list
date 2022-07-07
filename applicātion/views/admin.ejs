@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TOY ADMIN</title>
+    
+    <link rel="stylesheet" href="css/admin_style.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/header_style.css">
+ <script src="val/valcontent.js"></script>
+ <script>
+    function check()
+    {
+        alert(" you are going to delete the data");
+    }
+ </script>
+</head>
+<body>
+ <header>
+     <%- include('./header.ejs'); %>
+ </header>
+ 
+ 
+
+  <%  if(message !="") { %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong> <%=message%></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+ <%   } %>
+ 
+ <div class=add>
+  <h2>ADD TOY</h2>
+  <form action='/add' onsubmit=return validate() method="post" name="test" >
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="title" name="title" required>
+      </div>
+      <div class="col">
+        <input type="textbox" class="form-control" placeholder="DESCRIPTION" name="des" required>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="PRICE" name="price" required>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add item</button>
+  </form>
+</div>
+<div class="search">
+    <form class="d-flex" role="search" method="post" action="/search">
+        <input class="form-control me-2" type="search" placeholder="Search title" aria-label="Search" name="box">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+</div>
+
+<div class="tab">
+    <table style="width:80%">
+        <tr>
+        <th>
+            Sno.
+        </th>
+        <th>
+            title
+        </th>
+        <th>
+            description
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            Changes
+        </th>
+
+    </tr>
+  <%  for(var i=0;i<items.length;i++) { %>
+  
+      <tr>
+        <td>1</td>
+        <td><%= items[i].title %></td>
+        <td><%= items[i].description %></td>
+        <td><%= items[i].price %></td>
+        <td>
+            <form action="/delete/<%=items[i].id%>" method="post" onsubmit="return check()" >
+             <button type="submit">DELETE</button>
+            </form>
+            <form action="/edit/<%=items[i].id%>" method="get">
+                <button type="submit">EDIT</button>
+               </form> 
+
+        </td>
+      </tr>
+
+   <% } %>
+    </table>
+    
+</div>
+
+
+ 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.contain
+{   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:2px;
+    border:1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    HEIGHT:450PX;
+    width:600px;
+    margin-left:400px;
+    background: rgba(228, 132, 132, 0.5);
+    margin-top: 100px;
+}
+.cover
+{
+    background: linear-gradient(110deg, rgb(229, 40, 72) 60%, rgb(243, 140, 140) 60%);;
+    height:100vh;
+    width:100%;
+    position: absolute;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cover
+        {
+            padding:20px;
+            background-color: gray;
+        }
+        .contain
+        {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.5);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+    <div class="contain">
+    <h1 style="color:red;">oops!!!! there is some problem</h1>
+    <h2><%=message%></h2>
+    <button onclick="history.back()" style="height:50px; background-color: yellow; border-radius: 10px;">Go Back</button>
+</div>
+</div>
+</body>
+</html>

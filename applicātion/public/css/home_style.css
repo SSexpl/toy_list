@@ -1,0 +1,47 @@
+main
+{
+    background-color: aquamarine;
+}
+.top
+{
+    min-height: 500PX;
+    background-image: url(/images/t1.jpg);
+    background-size: cover;
+   
+
+}
+
+.content
+{
+    margin:40PX;
+    DISPLAY:FLEX;
+    flex-direction: column;
+    justify-content: center;
+    position :relative;
+    top:-200px;
+    background-color: white;
+    min-height: 400px;
+    z-index: 2;
+    box-shadow: 1px 0px 1px 1px #888888;;
+    row-gap: 0px;
+}
+.topcontent
+{
+    display: flex;
+    flex-direction: row;
+    height:200px;
+    width:700px;
+    justify-content: center;
+    padding:20px;
+    column-gap: 20px;
+}
+table, th, td {
+    border:1px solid black;
+  }
+.tab
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+   top:-50px;
+}
